@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 3 - Contagem Regressiva</title>
+</head>
+<body>
+    <h2>Contagem Regressiva</h2>
+
+    <form action="exer3.php" method="POST">
+        <label>Digite o número inicial da contagem:</label>
+        <input type="number" name="cont" required>
+        <button type="submit">Iniciar Contagem</button>
+    </form>
+    <hr>
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $cont = $_POST['cont'];
+
+        echo "<h3>Iniciando contagem:</h3>";
+
+        while ($cont > 0) {
+            echo $cont . "<br/>";
+            $cont--;
+        }
+        echo "<strong>Feliz Ano Novo!</strong>";
+    }
+    ?>
+
+</body>
+</html>
