@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 1 - Par ou Ímpar</title>
+</head>
+<body>
+    <h2>Verificador de Par ou Ímpar</h2>
+
+    <form action="exer1.php" method="POST">
+        <label>Digite um número:</label>
+        <input type="number" name="numero" required>
+        <button type="submit">Verificar</button>
+    </form>
+    <hr>
+
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $numero = $_POST['numero'];
+
+        if ($numero % 2 == 0) {
+            echo "O número <strong>$numero</strong> é Par.";
+        } else {
+            echo "O número <strong>$numero</strong> é Ímpar.";
+        }
+    }
+    ?>
+</body>
+</html>
