@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 2 - Tabuada</title>
+</head>
+<body>
+    <h2>Gerador de Tabuada</h2>
+
+    <form action="exer2.php" method="POST">
+        <label>Digite um número para ver a tabuada:</label>
+        <input type="number" name="numero" required>
+        <button type="submit">Gerar Tabuada</button>
+    </form>
+    <hr>
+    
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $numero = $_POST['numero'];
+
+        echo "<h3>Tabuada do $numero:</h3>";
+
+        for ($i = 0; $i <= 10; $i++) {
+            echo "$numero x $i = " . ($numero * $i) . "<br/>";
+        }
+    }
+    ?>
+</body>
+</html>
